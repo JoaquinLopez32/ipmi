@@ -157,7 +157,7 @@ void draw () {
   println(mouseX, "/", mouseY);
 
 
-  println("tiempo =", tiempo, "/", "triger=", "/inicio=", inicio, "escena1=", escena1, "escena2=", escena2, posx13);
+  println("tiempo =", tiempo, "/", "triger=", "/inicio=", inicio, "escena1=", escena1, "escena2=", escena2, posx9,tamx9);
 
   //ASIGNACIONES
 
@@ -303,195 +303,219 @@ void draw () {
 
 
           //CARD DE ROSEWOOD
+          if (tiempo > 700 && tiempo < 1175) {
+            imageMode(CENTER);
 
-          imageMode(CENTER);
+            if (tiempo > 700 & posy3 > 300) {
+              posy3 -= 10;
+              posy4 -= 10;
+            }
+            if (posy3 == 300 & posy4 > 110) {
+              posy4 -=10;
+              image(cartelrosewood, posx10, posy4, 370, 70);
+            }
+            if (posy5 != 170) {
+              image(rosewood, posx10, posy3, 490, 266);
 
-          if (tiempo > 700 & posy3 > 300) {
-            posy3 -= 10;
-            posy4 -= 10;
-          }
-          if (posy3 == 300 & posy4 > 110) {
-            posy4 -=10;
-            image(cartelrosewood, posx10, posy4, 370, 70);
-          }
-          if (posy5 != 170) {
-            image(rosewood, posx10, posy3, 490, 266);
-
-            if (posy4 == 110) {
-              image(cartelrosewood, posx10, posy5, tamx2, tamy1);
-            }
-            if (posy4 == 110 & tamx2 < 420) {
-              tamx2+=5;
-            }
-            if (posy4 == 110 & tamy1 < 80) {
-              tamy1 +=5;
-            }
-            if (posy4 == 110 & posy5 < 166) {
-              posy5 +=5;
-            }
-          } else {
-            image(rosewood2, posx11, posy6, tamx3, tamy2);
-
-            if (tiempo > 780) {
-              if (posy6 > 176) {
-                posy6 -=3;
+              if (posy4 == 110) {
+                image(cartelrosewood, posx10, posy5, tamx2, tamy1);
               }
-              if (posx11 > 173) {
-                posx11 -=5;
+              if (posy4 == 110 & tamx2 < 420) {
+                tamx2+=5;
               }
-              if (tamx3 > 260) {
-                tamx3 -= 6;
+              if (posy4 == 110 & tamy1 < 80) {
+                tamy1 +=5;
               }
-              if (tamy2 > 160) {
-                tamy2-=3.8;
+              if (posy4 == 110 & posy5 < 166) {
+                posy5 +=5;
               }
-            }
-          }
+            } else {
+              image(rosewood2, posx11, posy6, tamx3, tamy2);
 
-
-
-          //CARTEL DE RIVERSIDE
-
-          if (posx11 == 170 & posy7 > 300) {
-
-            posy7 -= 10;
-            posy8 -= 10;
-          }
-          if (posy7 == 300 & posy8 > 110) {
-            posy8 -=10;
-            image(cartelriverside, posx12, posy8, 370, 70);
-          }
-          if (posy9 != 170) {
-            image(riverside, posx12, posy7, 490, 266);
-
-            if (posy8 == 110) {
-              image(cartelriverside, posx12, posy9, tamx4, tamy3);
-            }
-            if (posy8 == 110 & tamx4 < 420) {
-              tamx4+=5;
-            }
-            if (posy8 == 110 & tamy3 < 80) {
-              tamy3 +=5;
-            }
-            if (posy8 == 110 & posy9 < 166) {
-              posy9 +=5;
-            }
-          } else {
-            image(riverside2, posx13, posy10, tamx5, tamy4);
-
-            if (tiempo > 880) {
-              if (posy10 > 176) {
-                posy10 -=3;
-              }
-              if (posx13 < 464) {
-                posx13 +=5;
-              }
-              if (tamx5 > 260) {
-                tamx5 -= 6;
-              }
-              if (tamy4 > 160) {
-                tamy4-=3.8;
+              if (tiempo > 780) {
+                if (posy6 > 176) {
+                  posy6 -=3;
+                }
+                if (posx11 > 173) {
+                  posx11 -=5;
+                }
+                if (tamx3 > 260) {
+                  tamx3 -= 6;
+                }
+                if (tamy2 > 160) {
+                  tamy2-=3.8;
+                }
               }
             }
-          }
 
 
-          //CARTEL DE MULDRAGH
 
-          if (posx13 == 465 & posy11 > 300) {
+            //CARTEL DE RIVERSIDE
 
-            posy11 -= 10;
-            posy12 -= 10;
-          }
-          if (posy11 == 300 & posy12 > 110) {
-            posy12 -=10;
-            image(cartelmuldragh, posx14, posy12, 370, 70);
-          }
-          if (posy13 != 170) {
-            image(muldragh, posx14, posy11, 490, 266);
+            if (posx11 == 170 & posy7 > 300) {
 
-            if (posy12 == 110) {
-              image(cartelmuldragh, posx14, posy13, tamx6, tamy5);
+              posy7 -= 10;
+              posy8 -= 10;
             }
-            if (posy12 == 110 & tamx6 < 420) {
-              tamx6+=5;
+            if (posy7 == 300 & posy8 > 110) {
+              posy8 -=10;
+              image(cartelriverside, posx12, posy8, 370, 70);
             }
-            if (posy12 == 110 & tamy5 < 80) {
-              tamy5 +=5;
-            }
-            if (posy12 == 110 & posy13 < 166) {
-              posy13 +=5;
-            }
-          } else {
-            image(muldragh2, posx15, posy14, tamx7, tamy6);
+            if (posy9 != 170) {
+              image(riverside, posx12, posy7, 490, 266);
 
-            if (tiempo > 980) {
-              if (posy14 < 358) {
-                posy14 +=3;
+              if (posy8 == 110) {
+                image(cartelriverside, posx12, posy9, tamx4, tamy3);
               }
-              if (posx15 > 173) {
-                posx15 -=5;
+              if (posy8 == 110 & tamx4 < 420) {
+                tamx4+=5;
               }
-              if (tamx7 > 260) {
-                tamx7 -= 6;
+              if (posy8 == 110 & tamy3 < 80) {
+                tamy3 +=5;
               }
-              if (tamy6 > 160) {
-                tamy6 -= 3.8;
+              if (posy8 == 110 & posy9 < 166) {
+                posy9 +=5;
               }
-            }
-          }
+            } else {
+              image(riverside2, posx13, posy10, tamx5, tamy4);
 
-
-          //CARTEL DE WESTPOINT
-
-          if (posx15 == 170 & posy15 > 300) {
-
-            posy15 -= 10;
-            posy16 -= 10;
-          }
-          if (posy15 == 300 & posy16 > 110) {
-            posy16 -=10;
-            image(cartelwestpoint, posx16, posy16, 370, 70);
-          }
-          if (posy17 != 170) {
-            image(westpoint, posx16, posy15, 490, 266);
-
-            if (posy16 == 110) {
-              image(cartelwestpoint, posx16, posy17, tamx8, tamy7);
-            }
-            if (posy16 == 110 & tamx8 < 420) {
-              tamx8+=5;
-            }
-            if (posy16 == 110 & tamy7 < 80) {
-              tamy7 +=5;
-            }
-            if (posy16 == 110 & posy17 < 166) {
-              posy17 +=5;
-            }
-          } else {
-            image(westpoint2, posx17, posy18, tamx9, tamy8);
-
-            if (tiempo > 1080 & tiempo < 1150) {
-              if (posy18 < 358) {
-                posy18 +=3;
-              }
-              if (posx17 < 464  & tiempo < 1150) {
-                posx17 +=5;
-              }
-              if (tamx9 > 260  & tiempo < 1150) {
-                tamx9 -= 6;
-              }
-              if (tamy8 > 160  & tiempo < 1150) {
-                tamy8 -= 3.8;
+              if (tiempo > 880) {
+                if (posy10 > 176) {
+                  posy10 -=3;
+                }
+                if (posx13 < 464) {
+                  posx13 +=5;
+                }
+                if (tamx5 > 260) {
+                  tamx5 -= 6;
+                }
+                if (tamy4 > 160) {
+                  tamy4-=3.8;
+                }
               }
             }
-          }
 
-          if (tiempo > 1180 & tamx9 > 0) {
-            tamx9-=15;
-            if (tamy8 > 0) {
-              tamy8-=10;
+
+            //CARTEL DE MULDRAGH
+
+            if (posx13 == 465 & posy11 > 300) {
+
+              posy11 -= 10;
+              posy12 -= 10;
             }
+            if (posy11 == 300 & posy12 > 110) {
+              posy12 -=10;
+              image(cartelmuldragh, posx14, posy12, 370, 70);
+            }
+            if (posy13 != 170) {
+              image(muldragh, posx14, posy11, 490, 266);
+
+              if (posy12 == 110) {
+                image(cartelmuldragh, posx14, posy13, tamx6, tamy5);
+              }
+              if (posy12 == 110 & tamx6 < 420) {
+                tamx6+=5;
+              }
+              if (posy12 == 110 & tamy5 < 80) {
+                tamy5 +=5;
+              }
+              if (posy12 == 110 & posy13 < 166) {
+                posy13 +=5;
+              }
+            } else {
+              image(muldragh2, posx15, posy14, tamx7, tamy6);
+
+              if (tiempo > 980) {
+                if (posy14 < 358) {
+                  posy14 +=3;
+                }
+                if (posx15 > 173) {
+                  posx15 -=5;
+                }
+                if (tamx7 > 260) {
+                  tamx7 -= 6;
+                }
+                if (tamy6 > 160) {
+                  tamy6 -= 3.8;
+                }
+              }
+            }
+
+
+            //CARTEL DE WESTPOINT
+
+            if (posx15 == 170 & posy15 > 300) {
+
+              posy15 -= 10;
+              posy16 -= 10;
+            }
+            if (posy15 == 300 & posy16 > 110) {
+              posy16 -=10;
+              image(cartelwestpoint, posx16, posy16, 370, 70);
+            }
+            if (posy17 != 170) {
+              image(westpoint, posx16, posy15, 490, 266);
+
+              if (posy16 == 110) {
+                image(cartelwestpoint, posx16, posy17, tamx8, tamy7);
+              }
+              if (posy16 == 110 & tamx8 < 420) {
+                tamx8+=5;
+              }
+              if (posy16 == 110 & tamy7 < 80) {
+                tamy7 +=5;
+              }
+              if (posy16 == 110 & posy17 < 166) {
+                posy17 +=5;
+              }
+            } else {
+              image(westpoint2, posx17, posy18, tamx9, tamy8);
+
+              if (tiempo > 1080 & tiempo < 1150) {
+                if (posy18 < 358) {
+                  posy18 +=3;
+                }
+                if (posx17 < 464  & tiempo < 1150) {
+                  posx17 +=5;
+                }
+                if (tamx9 > 260  & tiempo < 1150) {
+                  tamx9 -= 6;
+                }
+                if (tamy8 > 160  & tiempo < 1150) {
+                  tamy8 -= 3.8;
+                }
+              }
+            }
+
+            //CARDS SE VAN:
+            if (tiempo > 1150 & tamx3 > 0) {
+              tamx3-=15;
+              if (tamy2 > 0) {
+                tamy2-=10;
+              }
+            }
+            if (tiempo > 1155 & tamx5 > 0) {
+              tamx5-=15;
+              if (tamy4 > 0) {
+                tamy4-=10;
+              }
+            }
+            if (tiempo > 1160 & tamx7 > 0) {
+              tamx7-=15;
+              if (tamy6 > 0) {
+                tamy6-=10;
+              }
+            }
+            if (tiempo > 1165 & tamx9 > 0) {
+              tamx9-=15;
+              if (tamy8 > 0) {
+                tamy8-=10;
+              }
+            }
+
+            // llave del else de las cards
+          } else if (tamx9 ==121 & posx9<1000) {
+            posx9+=5;
           }
         }
       }
