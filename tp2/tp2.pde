@@ -53,6 +53,7 @@ String t2 = "Projet Zomboid es un simulador de superviviencia en un apocalipsis 
 String t3 = "Con un mapa tremendamente extenso";
 String t4 = "miles de items, y lo que lo diferencia del resto...";
 String t5 = "MUCHAS MECANICAS!";
+String t6 = "El Personaje"
 //--------------------------------------//
 
 //escena2
@@ -119,7 +120,28 @@ int posx15 = 320;
 int posx16 = 320;
 int posx17 = 320;
 
+//--------------------------------------//
 
+//escena3
+boolean escena3 = false;
+PImage img5;
+PImage ti1;
+PImage ti2;
+PImage ti3;
+PImage ti4;
+PImage ti5;
+PImage ti6;
+PImage pj1;
+PImage pj2;
+PImage pj3;
+PImage pj4;
+PImage pj5;
+PImage pj6;
+PImage panel;
+
+int tr4 = 255;
+int posx18 = -200;
+int tamx10 = 0;
 
 
 void setup() {
@@ -140,6 +162,20 @@ void setup() {
   riverside2 = loadImage("riverside2.png");
   westpoint2 = loadImage("westpoint2.png");
   rosewood2 = loadImage("rosewood2.png");
+  img5 = loadImage("img5.png");
+  ti1 = loadImage("t1.png");
+  ti2 = loadImage("t2.png");
+  ti3 = loadImage("t3.png");
+  ti4 = loadImage("t4.png");
+  ti5 = loadImage("t5.png");
+  ti6 = loadImage("t6.png");
+  pj1 = loadImage("pj1.png");
+  pj2 = loadImage("pj2.png");
+  pj3 = loadImage("pj3.png");
+  pj4 = loadImage("pj4.png");
+  pj5 = loadImage("pj5.png");
+  pj6 = loadImage("pj6.png");
+  panel = loadImage("panel.png");
 
 
   mifuente = loadFont("mifuente.vlw");
@@ -157,7 +193,7 @@ void draw () {
   println(mouseX, "/", mouseY);
 
 
-  println("tiempo =", tiempo, "/", "triger=", "/inicio=", inicio, "escena1=", escena1, "escena2=", escena2, posx9,tamx9);
+  println("tiempo =", tiempo, "/", "triger=", "/inicio=", inicio, "escena1=", escena1, "escena2=", escena2, "escena3=", escena3, posx9);
 
   //ASIGNACIONES
 
@@ -258,7 +294,7 @@ void draw () {
           rect(posx7+300, 0, 900, 480);
           rect(posx7+400, 0, 900, 480);
         }
-      } else if (tiempo > 480 && tiempo < 10000) {
+      } else if (tiempo > 480 && tiempo < 1250) {
         inicio = false;
         escena1 = false;
         escena2 = true;
@@ -515,8 +551,36 @@ void draw () {
 
             // llave del else de las cards
           } else if (tamx9 ==121 & posx9<1000) {
-            posx9+=5;
+            posx9+=10;
+            posx8+=10;
           }
+        }
+      } else if (tiempo > 1250) {
+        escena3=true;
+        escena2=false;
+
+        if (escena3 == true) {
+          
+          if (tr4 > 0)
+          tr4-=2;
+          
+          image(img5,0,0);
+          
+          fill(0,tr4);
+          rect(320,240,640,480);
+          
+          if (tr4 == 0 & tamx10 < 282){
+          tamx10 +=5;
+          }
+          if (tamx10 > 280 & posx18 < 20){
+          posx18+=5;
+          }
+          fill(N2);
+          rect(10,10,tamx10,205,20);
+          textAlign(LEFT);
+          text(t6,posx18,20);
+          
+          if(posx18 > 20 & posx19 < 20){}
         }
       }
     }
