@@ -53,7 +53,6 @@ String t2 = "Projet Zomboid es un simulador de superviviencia en un apocalipsis 
 String t3 = "Con un mapa tremendamente extenso";
 String t4 = "miles de items, y lo que lo diferencia del resto...";
 String t5 = "MUCHAS MECANICAS!";
-String t6 = "El Personaje"
 //--------------------------------------//
 
 //escena2
@@ -140,8 +139,49 @@ PImage pj6;
 PImage panel;
 
 int tr4 = 255;
+int tr5 = 0;
 int posx18 = -200;
+int posx19 = -270;
+int posx20 = 640;
+int posx21 = -200;
+int posx22 = -270;
+int posy19 = 480;
+int posy20 = 480;
+int posy21 = 480;
+int posy22 = 480;
+int posy23 = 480;
+int posy24 = 480;
+int posy25 = -100;
 int tamx10 = 0;
+int tamx11 = 0;
+int tamx12 = 0;
+int tamx13 = 0;
+int tamx14 = 0;
+int tamx15 = 0;
+int tamy9 = 0;
+int tamy10 = 0;
+String t8 = "El Personaje";
+String t9 = "Al momento de crear a tu personaje, podes darle el aspecto que quieras, pero mas importante aún, vas a elegir los atributos y debilidades que lo acompañaran en su aventura";
+String t10 = "Traits!";
+String t11 = "Estos atributos y debilidades contemplan fobias, intolerancias, afinidad con herramientas, manejo del miedo y conocimiento de recetas. Te brindará, experiencias diferentes!";
+String t12 = "Una vez hayas creado a tu personaje, y elegido en donde la iniciarás...";
+String t13 = "Comienza la historia de como moriste";
+
+//--------------------------------------//
+
+//escena4
+
+boolean escena4 = false;
+
+
+
+//--------------------------------------//
+
+//FINAL
+boolean Final = false;
+
+
+
 
 
 void setup() {
@@ -193,7 +233,7 @@ void draw () {
   println(mouseX, "/", mouseY);
 
 
-  println("tiempo =", tiempo, "/", "triger=", "/inicio=", inicio, "escena1=", escena1, "escena2=", escena2, "escena3=", escena3, posx9);
+  println("tiempo =", tiempo, "/", "triger=", "/inicio=", inicio, "escena1=", escena1, "escena2=", escena2, "escena3=", escena3, "escena4=", escena4);
 
   //ASIGNACIONES
 
@@ -555,32 +595,161 @@ void draw () {
             posx8+=10;
           }
         }
-      } else if (tiempo > 1250) {
+      } else if (tiempo > 1250 & tiempo < 3100) {
         escena3=true;
         escena2=false;
 
+
+
+        //----------------------ESCENA 3----------------------//
+
+
         if (escena3 == true) {
-          
+
           if (tr4 > 0)
-          tr4-=2;
-          
-          image(img5,0,0);
-          
-          fill(0,tr4);
-          rect(320,240,640,480);
-          
-          if (tr4 == 0 & tamx10 < 282){
-          tamx10 +=5;
+            tr4-=2;
+          imageMode(CORNER);
+          image(img5, 0, 0);
+
+          fill(0, tr4);
+          rect(320, 240, 640, 480);
+
+          if (tr4 < 0 & tamx10 < 282) {
+            tamx10 +=5;
           }
-          if (tamx10 > 280 & posx18 < 20){
-          posx18+=5;
+
+          rectMode(CORNER);
+          fill(N2);
+          rect(10, 10, tamx10, 205, 20);
+
+          //titulo
+          textAlign(LEFT);
+          if (tiempo > 1300 & tiempo < 1600 & tamx10 > 280 & posx18 < 20) {
+            posx18+=5;
+          }
+          textSize(22);
+          fill(B1);
+          text(t8, posx18, 30);
+
+          //texto
+          if (tiempo > 1550 & tiempo < 1700 & posx19 < 20) {
+            posx19 += 5;
+          }
+          textSize(18);
+          text(t9, posx19, 45, 270, 150);
+
+          //carrusel de pjs
+          if (posx18 == 20 & posx20 > -2308) {
+            posx20 -= 5;
+          }
+          imageMode(CORNER);
+          image(pj1, posx20, 228);
+          image(pj2, posx20+400, 228);
+          image(pj3, posx20+400*2, 228);
+          image(pj4, posx20+400*3, 228);
+          image(pj5, posx20+400*4, 228);
+          image(pj6, posx20+400*5, 228);
+
+          if (tiempo > 1400 & tiempo < 1600 & posx18 == 20 & tamx11<186) {
+            tamx11 +=6;
+            if (tamy9<180) {
+              tamy9 +=6;
+            }
+          }
+          imageMode(CENTER);
+          image(panel, 477, 116, tamx11, tamy9);
+          if (posx20 == -2310 & posx18 > -200) {
+            posx18 -= 5;
+            posx19 -=8;
+          }
+
+          if (tiempo > 2100 & tiempo < 2150 & tamx11>0) {
+            tamx11 -=6;
+            if (tamy9>0) {
+              tamy9 -=6;
+            }
+          }
+
+          //titulo2
+          if (tiempo > 2150 & posx21<20) {
+            posx21+=5;
+          }
+          textSize(22);
+          text(t10, posx21, 30);
+
+          //texto2
+          if (posx21 == 20 & posx22<20) {
+            posx22+=5;
+          }
+          textSize(18);
+          text(t11, posx22, 45, 270, 150);
+
+          //traits}
+          if (posx21 == 20 & posy19 > 240) {
+            posy19-=5;
+          } else if (posy19 == 240 & posy20 > 275) {
+            posy20-=5;
+          } else if (posy20 == 275 & posy21 > 315) {
+            posy21-=5;
+          } else if (posy21 == 315 & posy22 > 350) {
+            posy22-=5;
+          } else if (posy22 == 350 & posy23 > 390) {
+            posy23-=5;
+          } else if (posy23 == 390 & posy24 > 430) {
+            posy24-=5;
+          }
+          imageMode(CORNER);
+          image(ti1, 65, posy19);
+          image(ti2, 65, posy20);
+          image(ti3, 65, posy21);
+          image(ti4, 65, posy22);
+          image(ti5, 65, posy23);
+          image(ti6, 65, posy24);
+
+
+          if (tiempo > 2550 & tamy10 < 180 ) {
+            tamy10 += 5;
           }
           fill(N2);
-          rect(10,10,tamx10,205,20);
-          textAlign(LEFT);
-          text(t6,posx18,20);
-          
-          if(posx18 > 20 & posx19 < 20){}
+          rect (348, 10, 282, tamy10, 20);
+
+          if (tamy10 == 180 & posy25 < 30) {
+            posy25+=5;
+          }
+          fill(B1);
+          text(t12, 370, posy25, 242, 76);
+
+          if (posy25==30 & tr5 < 255 & tiempo > 2750) {
+            tr5+=5;
+          }
+
+          fill(255, 0, 0, tr5);
+          textSize(22);
+          text(t13, 370, 120, 242, 150);
+
+
+          //transicion
+          if (tiempo > 2850 & tamx12 < 3000) {
+            tamx12 +=5;
+            tamx13 += 8;
+            tamx14 += 10;
+            tamx15 +=10;
+          }
+
+          fill(113, 0, 0, 191);
+          circle(110, 80, tamx12);
+          circle(470, 100, tamx13);
+          circle(170, 280, tamx14);
+          circle(570, 330, tamx15);
+        }
+      } else if (tiempo > 3100) {
+        escena4 = true;
+        escena3 = false;
+        //----------------------ESCENA 4----------------------//
+
+
+        if (escena4 == true) {
+          background(113, 0, 0, 191);
         }
       }
     }
