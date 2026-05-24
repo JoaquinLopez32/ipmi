@@ -985,5 +985,147 @@ void mousePressed() {
   }
   if (mouseX > 170 & mouseX < 470 & mouseY >140 & mouseY<340 & tiempo > 5000){
   tiempo = 0;
+  //inicio
+
+
+
+
+
+posx1 = 320;
+posx2 = 320;
+ posx3 = 320;
+ posx4 = 248;
+ tr1 = 0;
+
+//--------------------------------------//
+
+//escena1
+
+ tr2 = 0;
+ tr3 = 0;
+ posx5 = -300;
+ posx6 = 640;
+ posx7 = 640;
+ posy1 = 480;
+
+//--------------------------------------//
+
+//escena2
+
+ tam = 0;
+ tam2 = 0;
+ tamx1 = 0;
+ tamx2= 370;
+ tamx3 = 490;
+ tamx4 = 370;
+ tamx5 = 490;
+ tamx6 = 370;
+ tamx7 = 490;
+ tamx8 = 370;
+ tamx9 = 490;
+ tamy1 = 70;
+ tamy2 = 305;
+ tamy3 = 70;
+ tamy4 = 305;
+ tamy5 = 70;
+ tamy6 = 305;
+ tamy7 =70;
+ tamy8 = 305;
+ posy2 = 240;
+ posy3 = 620;
+ posy4 = 620;
+ posy5 = 110;
+ posy6 = 281;
+ posy7 = 620;
+ posy8 = 620;
+ posy9 = 110;
+ posy10 = 281;
+ posy11 = 620;
+ posy12 = 620;
+ posy13 = 110;
+ posy14 = 281;
+ posy15 = 620;
+ posy16 = 620;
+ posy17 = 110;
+ posy18 = 281;
+ posx8 = -640;
+ posx9 = -500;
+ posx10 = 320;
+ posx11 = 320;
+ posx12 = 320;
+ posx13 = 320;
+ posx14 = 320;
+ posx15 = 320;
+ posx16 = 320;
+ posx17 = 320;
+
+//--------------------------------------//
+
+//escena3
+
+
+ tr4 = 255;
+ posx18 = -200;
+ posx19 = -270;
+ posx20 = 640;
+ posx21 = -200;
+ posx22 = -270;
+ posy19 = 480;
+ posy20 = 480;
+ posy21 = 480;
+ posy22 = 480;
+ posy23 = 480;
+ posy24 = 480;
+ posy25 = -100;
+ tamx10 = 0;
+ tamx11 = 0;
+ tamx12 = 0;
+ tamx13 = 0;
+ tamx14 = 0;
+ tamx15 = 0;
+ tamy9 = 0;
+ tamy10 = 0;
+ tamy11 = 0;
+
+//--------------------------------------//
+
+//escena4
+
+
+ posx23 = 655;
+ posy26 = 480;
+ posy27 = 480;
+ tamx16 = 0;
+ tamx17 = 0;
+ tamx18 = 0;
+ tamx19 =0;
+ posx24 = -185;
+ posx25 = -185;
+ posx26 = 0;
+ posx27 = 320;
+
+
+//--------------------------------------//
+
+//ESCENA5
+
+ tr6 = 0;
+ tr7 = 0;
+
+ posx28 = 0;
+ posx29 = -640;
+ posx30 = -640;
+ posy28 = 480;
+ posy29 = 480;
+
+
+
+
+
+
+//--------------------------------------//
+
+//FINAL
+boolean Final = false;
   }
 }
