@@ -1,10 +1,34 @@
+int posx1 = -20;
+int posy1 = -8;
+int posx2 = 0;
+int posy2 = -8;
+int posx3 = 0;
+int posy3 = -20;
+int posx4 = 20;
+int posy4 = 0;
+int posx5 = 0;
+int posy5 = 20;
+int posx6 = 0;
+int posy6 = 8;
+int posx7 = -20;
+int posy7 = 8;
+int posx8 = -20;
+int posy8 = 0;
 void Flechita() {
-  for (int x = 450; x < 800; x+=60 ) {
-    for (int y = 50; y < 400; y+=60) {
+  for (int i = 0; i < 6; i++ ) {
+    for (int j = 0; j < 8; j++) {
 
+
+      int x = 450 +(i*60);
+      int y = -10 +(j*60);
 
       push();
       translate(x, y);
+
+      if (j % 4 == 2 || j % 4 == 3) {
+        rotate(PI);
+      }
+
       rotate(radians(mouseX/2));
       beginShape();
       fill(232, 222, 26);
@@ -22,4 +46,8 @@ void Flechita() {
       pop();
     }
   }
+  fill(violeta);
+  noStroke();
+  rect(400, 0, 800, 20);
+  rect(400, 380, 800, 400);
 }
