@@ -14,6 +14,8 @@ int posx7 = -20;
 int posy7 = 8;
 int posx8 = -20;
 int posy8 = 0;
+
+color felchas;
 void Flechita() {
   for (int i = 0; i < 6; i++ ) {
     for (int j = 0; j < 8; j++) {
