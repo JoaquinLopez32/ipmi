@@ -1,14 +1,32 @@
+//video: https://youtu.be/ckx4E8pZgy4
 
 boolean direccion;
+
+boolean coloresInvertidos = false;
+
+boolean efectoDistancia = true;
+
 PImage img;
-color violeta = color(126, 4, 177);
+
+color violeta = color(125, 5, 180);
+color amarillo = color(200, 230, 5);
+
+
 void setup() {
   img = loadImage("40.png");
   size(800, 400);
 }
 
 void draw() {
-  background(violeta);
+ 
+
+  if (!coloresInvertidos) {
+    background(violeta); 
+  } else {
+    background(amarillo); 
+  }
+  
+  
   image(img, 0, 0, 400, 400);
   println(direccion);
 
@@ -64,8 +82,16 @@ void draw() {
 }
 
 void keyPressed() {
-  // Invierte el valor del booleano de forma directa y limpia
+
   if (key == 'r') {
     direccion = !direccion;
+  } else if (key == 'm') {
+    mouseX = 360;
+  }
+    if (key == 'c') {
+    coloresInvertidos = !coloresInvertidos;
+  }
+    if (key == 'e') {
+    efectoDistancia = !efectoDistancia;
   }
 }
